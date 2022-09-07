@@ -3,13 +3,21 @@ let dice = document.querySelector("button");
 
 // 2 - Create a function that generates and updates the DOM
 // API endpoint: https://api.adviceslip.com/advice
-const generateAdvice = () => {
+const  generateAdvice = async() => {
   // Use fetch to get the data
-  // ...
+  let url = 'https://api.adviceslip.com/advice';
+    try {
+        let res = await fetch(url);
+        let data = await res.json();
+        console.log(data)
+    } catch (error) {
+        console.log(error);
+    }
+
   
   // Update the DOM using the generated data:
   // Select adviceID text (span)
-  // ...
+  let adviceID = 
   // Change adviceID's innerText to show slip.id
   // ...
   // Select adviceText (p)
